@@ -1,0 +1,41 @@
+*Todo.vim* Vimscript for creating todos
+
+Usage                                          |todo-vim-usage|
+Install                                        |todo-vim-install|
+Setup                                          |todo-vim-setup|
+FAQ                                            |todo-vim-faq|
+Thanks                                         |todo-vim-thanks|
+
+This is a vimscript for creating and managing todo lists in markdown
+
+For the latest version please see https://github.com/robhurring/todo.vim
+
+==============================================================================
+USAGE                                                 *:Todo* *todo-vim-usage*
+
+
+
+==============================================================================
+INSTALL                                                     *todo-vim-install*
+
+Copy following files into your plugin directory.
+
+rtp:
+  - plugin/todo.vim
+
+==============================================================================
+SETUP                                                       *todo-vim-setup*
+
+
+==============================================================================
+FAQ                                                           *todo-vim-faq*
+
+Q. :Gist returns a Forbidden error
+A. Try deleting ~/.gist-vim and authenticating again.
+
+==============================================================================
+THANKS                                                     *todo-vim-thanks*
+
+vitalk - simple-todo.vim
+
+vim:tw=78:ts=8:ft=help:norl:
