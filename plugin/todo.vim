@@ -13,7 +13,7 @@ if !exists('g:todo_done_symbol')
 endif
 
 function! s:MakeTodo(val)
-  return '[ ] ' . a:val
+  return '- [ ] ' . a:val
 endfunction
 
 function! s:Strip(val)
@@ -49,14 +49,14 @@ command! -nargs=* -range -bang Todo <line1>,<line2>call <SID>Todo(<bang>0, <f-ar
 " Yanked from https://github.com/vitalk/vim-simple-todo/blob/master/plugin/simple-todo.vim
 
 " Insert todo
-nnoremap <silent> <Plug>(todo-new) i[ ]<space>
-inoremap <silent> <Plug>(todo-new) [ ]<space>
+nnoremap <silent> <Plug>(todo-new) i- [ ]<space>
+inoremap <silent> <Plug>(todo-new) - [ ]<space>
 
-inoremap <silent> <Plug>(todo-new-above) <Esc>O[ ]<space>
-nnoremap <silent> <Plug>(todo-new-above) O[ ]<space>
+inoremap <silent> <Plug>(todo-new-above) <Esc>O- [ ]<space>
+nnoremap <silent> <Plug>(todo-new-above) O- [ ]<space>
 
-inoremap <silent> <Plug>(todo-new-below) <Esc>o[ ]<space>
-nnoremap <silent> <Plug>(todo-new-below) o[ ]<space>
+inoremap <silent> <Plug>(todo-new-below) <Esc>o- [ ]<space>
+nnoremap <silent> <Plug>(todo-new-below) o- [ ]<space>
 
 " Mark as done
 nnoremap <silent> <Plug>(todo-mark-as-done) :execute 's/^\(\s*[-+*]\?\s*\)\[ \]/\1[' . g:todo_done_symbol . ']/'<cr>\|:noh<cr>
@@ -73,4 +73,3 @@ vnoremap <silent> <Plug>(todo-mark-as-undone) :execute 's/^\(\s*[-+*]\?\s*\)\[' 
       \:silent! call repeat#set("\<Plug>(todo-mark-as-undone)")<cr>
 inoremap <silent> <Plug>(todo-mark-as-undone) <Esc>:execute 's/^\(\s*[-+*]\?\s*\)\[' . g:todo_done_symbol . ']/\1[ ]/'<cr>\|:noh<cr>
       \:silent! call repeat#set("\<Plug>(todo-mark-as-undone)")<cr>
-
